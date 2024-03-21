@@ -84,7 +84,7 @@ export const ServiceSection = () => {
             <div className="flex flex-col items-center justify-center">
               <div
                 className="w-[240px] h-[240px] rounded-full overflow-hidden mb-8 cursor-pointer"
-                onClick={() => router.push("/news/GV0lt5TDzbqvdfwYXzAE")}
+                onClick={() => router.push("/news/EHqwdMnpfPWv5fNAVs2F")}
               >
                 <Image
                   alt="service1"
@@ -109,7 +109,7 @@ export const ServiceSection = () => {
             <div className="flex flex-col items-center justify-center">
               <div
                 className="w-[240px] h-[240px] rounded-full overflow-hidden mb-8 cursor-pointer"
-                onClick={() => router.push("/news/KR0ogdJHMUxuYcMfG2Ic")}
+                onClick={() => router.push("/news/x8yhbSa25UJFUgDXPTWU")}
               >
                 <Image
                   alt="service2"
@@ -134,7 +134,7 @@ export const ServiceSection = () => {
             <div className="flex flex-col items-center justify-center">
               <div
                 className="w-[240px] h-[240px] rounded-full overflow-hidden mb-8 cursor-pointer"
-                onClick={() => router.push("/news/EncL6aoctOVeNjimNDBD")}
+                onClick={() => router.push("/news/k0RsJyHzBllE0sNbDPGi")}
               >
                 <Image
                   alt="service3"
@@ -263,6 +263,7 @@ export const SubcribeSection = () => {
 
       toast.success("Đăng ký theo dõi thành công");
     } catch (error) {
+      console.log("error", error);
       const err = error as {
         message: string;
       };

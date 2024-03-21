@@ -63,9 +63,9 @@ export default function IndexPage() {
   const onDelete = async () => {
     try {
       if (
-        id === "EncL6aoctOVeNjimNDBD" ||
-        id === "KR0ogdJHMUxuYcMfG2Ic" ||
-        id === "GV0lt5TDzbqvdfwYXzAE"
+        id === "k0RsJyHzBllE0sNbDPGi" ||
+        id === "EHqwdMnpfPWv5fNAVs2F" ||
+        id === "x8yhbSa25UJFUgDXPTWU"
       ) {
         toast.error(
           "Xoá thất bài. Bài viết đã được liên kết với trang DỊCH VỤ, vui lòng liên hệ nhà phát triển để được hỗ trợ. Support email: vohuynh01092002@gmail.com",
