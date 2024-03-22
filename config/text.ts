@@ -31,7 +31,7 @@ export const textConfig = {
       title: "CÁC DỰ ÁN ĐÃ THỰC HIỆN",
     },
     section5: {
-      title: "DỊCH VỤ VINAMATECH",
+      title: "DỊCH VỤ LOON EYES",
       service1: "Drone ngoài trời",
       service2: "Drone trong nhà",
       service3: "Drone rồng, phượng hoàng",
@@ -106,7 +106,7 @@ export const textConfig = {
   },
   news: {
     section1: {
-      title: "TIN TỨC VINAMETECH",
+      title: "TIN TỨC LOON EYES",
       description: "Cảm xúc hùng vĩ sẽ không phai đi",
     },
   },

@@ -392,8 +392,11 @@ export const SubcribeSection = () => {
               "flex items-center justify-center font-medium mb-4 text-center text-neutral-300",
             )}
           >
-            <AddressIcon height={24} width={24} fill="white" className="mr-4" />{" "}
-            {data?.address}
+            <AddressIcon height={24} width={24} fill="white" className="mr-8" />{" "}
+            <div>
+              <div>{data?.address1}</div>
+              <div>{data?.address2}</div>
+            </div>
           </div>
 
           <div
@@ -593,8 +596,11 @@ export const ContactFormSection = () => {
               "flex items-center justify-center font-medium my-6 text-center text-neutral-300",
             )}
           >
-            <AddressIcon height={32} width={32} fill="white" className="mr-4" />{" "}
-            {data?.address}
+            <AddressIcon height={32} width={32} fill="white" className="mr-8" />{" "}
+            <div>
+              <div>{data?.address1}</div>
+              <div>{data?.address2}</div>
+            </div>
           </div>
         </div>
       </div>

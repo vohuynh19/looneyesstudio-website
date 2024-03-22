@@ -24,7 +24,8 @@ export default function IndexPage() {
   const facebookRef = useRef<HTMLInputElement>(null);
   const tiktokRef = useRef<HTMLInputElement>(null);
   const youtubeRef = useRef<HTMLInputElement>(null);
-  const addressRef = useRef<HTMLInputElement>(null);
+  const address1Ref = useRef<HTMLInputElement>(null);
+  const address2Ref = useRef<HTMLInputElement>(null);
 
   const { data, isFetching } = useQuery({
     queryKey: ["config"],
@@ -44,14 +45,16 @@ export default function IndexPage() {
       facebookRef.current &&
       tiktokRef.current &&
       youtubeRef.current &&
-      addressRef.current
+      address1Ref.current &&
+      address2Ref.current
     ) {
       phoneRef.current.value = data.phone;
       emailRef.current.value = data.email;
       facebookRef.current.value = data.facebook;
       tiktokRef.current.value = data.tiktok;
       youtubeRef.current.value = data.youtube;
-      addressRef.current.value = data.address;
+      address1Ref.current.value = data.address1;
+      address2Ref.current.value = data.address2;
     }
   }, [data]);
 
@@ -63,7 +66,8 @@ export default function IndexPage() {
         facebook: facebookRef.current?.value || "",
         tiktok: tiktokRef.current?.value || "",
         youtube: youtubeRef.current?.value || "",
-        address: addressRef.current?.value || "",
+        address1: address1Ref.current?.value || "",
+        address2: address2Ref.current?.value || "",
       });
       toast.success("Cập nhật cấu hình thành công");
     } catch (error) {
@@ -189,12 +193,31 @@ export default function IndexPage() {
                   "w-full mb-2 text-start",
                 )}
               >
-                Địa chỉ
+                Địa chỉ 1
               </div>
               <Input
-                placeholder="Enter Youtube link"
+                placeholder="Enter address 1"
                 className="mb-8"
-                ref={addressRef}
+                ref={address1Ref}
+              />
+            </div>
+
+            <div>
+              <div
+                className={clsx(
+                  title({
+                    color: "white",
+                    size: "sm",
+                  }),
+                  "w-full mb-2 text-start",
+                )}
+              >
+                Địa chỉ 2
+              </div>
+              <Input
+                placeholder="Enter address 2"
+                className="mb-8"
+                ref={address2Ref}
               />
             </div>
           </div>

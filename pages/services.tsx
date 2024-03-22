@@ -10,6 +10,7 @@ import { textConfig } from "@/config/text";
 import DefaultLayout from "@/layouts/default";
 import { useSnapScroll } from "@/layouts/useSnapScroll";
 import clsx from "clsx";
+import Head from "next/head";
 import Image from "next/image";
 
 export default function IndexPage() {
@@ -17,6 +18,15 @@ export default function IndexPage() {
 
   return (
     <DefaultLayout>
+      <Head>
+        <title>{`${textConfig.services.section1.title} | Looneyesstudio`}</title>
+        <meta
+          key="title"
+          content={`Liên hệ | Looneyesstudio`}
+          property="og:title"
+        />
+      </Head>
+
       <div className="bg-black">
         {/**
          * SECTION 1

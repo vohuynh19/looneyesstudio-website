@@ -8,6 +8,7 @@ import {
 import { textConfig } from "@/config/text";
 import DefaultLayout from "@/layouts/default";
 import clsx from "clsx";
+import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -16,6 +17,14 @@ export default function IndexPage() {
 
   return (
     <DefaultLayout>
+      <Head>
+        <title>{`${textConfig.news.section1.title} | Looneyesstudio`}</title>
+        <meta
+          key="title"
+          content={`Liên hệ | Looneyesstudio`}
+          property="og:title"
+        />
+      </Head>
       <div className="bg-black">
         {/**
          * SECTION 1

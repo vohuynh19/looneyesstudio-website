@@ -42,5 +42,6 @@ interface IConfig {
   facebook: string;
   youtube: string;
   tiktok: string;
-  address: string;
+  address1: string;
+  address2: string;
 }

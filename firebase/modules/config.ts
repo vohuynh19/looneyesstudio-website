@@ -57,14 +57,16 @@ export const updateConfig = async ({
   facebook,
   youtube,
   tiktok,
-  address,
+  address1,
+  address2,
 }: {
   email: string;
   phone: string;
   facebook: string;
   youtube: string;
   tiktok: string;
-  address: string;
+  address1: string;
+  address2: string;
 }) => {
   const dataQuery = query(collection(db, "config"));
   (await getDocs(dataQuery)).docs.map(async (doc) => {
@@ -78,7 +80,8 @@ export const updateConfig = async ({
         facebook,
         youtube,
         tiktok,
-        address,
+        address1,
+        address2,
         updatedAt: moment().toString(),
         createdAt: moment().toString(),
       });
