@@ -3,11 +3,9 @@ export const textConfig = {
     seeMore: "Xem thêm",
     contact: "Liên hệ",
     contactNow: "Liên hệ ngay",
-    phone: "(+84) 90 45 48 088",
-    email: "INFO@VINAMATECH.COM",
     emailForNews: "Đăng ký nhận thông tin mới nhất",
     subcribe: "ĐĂNG KÝ",
-    copyright: "Copyright (C) 2023 Vinamatech",
+    copyright: "Copyright (C) 2023 Looneyesstudio",
   },
   "/": {
     section1: {
@@ -23,7 +21,7 @@ export const textConfig = {
         "Với sự độc đáo và nổi bật của màn trình diễn ánh sáng, Drone Light Show thường được lựa chọn làm điểm nhấn trong những sự kiện tầm cỡ trên thế giới.",
     },
     section3: {
-      title: "GIỚI THIỆU VINAMATECH",
+      title: "GIỚI THIỆU LOONEYESSTUDIO",
       description1:
         "Đơn vị tiên phong trong đầu tư  và ứng dụng các công nghệ tiên tiến của máy bay không người lái ( Drone ) vào quảng cáo và truyền thông",
       description2:
@@ -39,14 +37,14 @@ export const textConfig = {
       service3: "Drone rồng, phượng hoàng",
     },
     section6: {
-      title1: "100",
-      desc1: "100 DRONE",
-      title2: "200",
-      desc2: "200 DRONE",
-      title3: "500",
-      desc3: "500 DRONE",
-      title4: "1000",
-      desc4: "1000 DRONE",
+      title1: "300",
+      desc1: "300 DRONE",
+      title2: "500",
+      desc2: "500 DRONE",
+      title3: "1000",
+      desc3: "1000 DRONE",
+      title4: "2400",
+      desc4: "2400 DRONE",
     },
     section7: {
       title: "SẴN SÀNG ĐỂ VIẾT CÂU CHUYỆN CỦA BẠN LÊN BẦU TRỜI",
@@ -56,13 +54,13 @@ export const textConfig = {
   },
   intro: {
     section1: {
-      title: "CÂU CHUYỆN VINAMATECH",
+      title: "GIỚI THIỆU LOON EYES",
       description: "Cảm xúc hùng vĩ sẽ không phai đi",
     },
     section2: {
       title: "TẦM NHÌN",
       description:
-        "Trở thành công ty đứng đầu trong việc ứng dụng các công nghệ tiên tiến của thế giới  kiến tạo ra các sản phẩm quảng cáo chất lượng, khác biệt từ đó thúc đẩy hoạt động kinh doanh của khách hàng",
+        "Trở thành công ty đứng đầu trong việc ứng dụng các công nghệ tiên tiến của thế giới kiến tạo ra các sản phẩm quảng cáo chất lượng, khác biệt từ đó thúc đẩy hoạt động kinh doanh của khách hàng.",
     },
     section3: {
       title: "SỨ MỆNH",
@@ -73,7 +71,7 @@ export const textConfig = {
         "Tạo điểm nhấn cho những sự kiện du lịch, văn hóa và quảng bá thương hiệu của doanh nghiệp",
     },
     section4: {
-      title: "DỊCH VỤ VINAMATECH",
+      title: "DỊCH VỤ LOON EYES",
       service1: "Drone ngoài trời",
       service2: "Drone trong nhà",
       service3: "Drone rồng, phượng hoàng",
@@ -86,14 +84,14 @@ export const textConfig = {
   },
   services: {
     section1: {
-      title: "DỊCH VỤ VINAMETECH",
+      title: "DỊCH VỤ LOON EYES",
       description: "Cảm xúc hùng vĩ sẽ không phai đi",
     },
   },
   contact: {
     section1: {
       title: "LIÊN HỆ",
-      description: "Cảm xúc hùng vĩ sẽ không phai đi",
+      description: "Nhận tư vấn và lên phương án quảng cáo",
     },
     section2: {
       title: "ĐỂ LẠI THÔNG TIN ĐỂ NHẬN TƯ VẤN",

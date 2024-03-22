@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Vinamatech - Cảm xúc hùng vĩ sẽ không phai đi",
+  name: "Looneyesstudio - Cảm xúc hùng vĩ sẽ không phai đi",
   description: "Cảm xúc hùng vĩ sẽ không phai đi",
   navItems: [
     {
@@ -9,7 +9,7 @@ export const siteConfig = {
       href: "/",
     },
     {
-      label: "GIỚI THIỆU VINAMATECH",
+      label: "GIỚI THIỆU LOON EYES",
       href: "/intro",
     },
     {

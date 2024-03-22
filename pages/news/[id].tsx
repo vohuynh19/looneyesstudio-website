@@ -2,6 +2,7 @@ import { fullScreen, subtitle, title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 import clsx from "clsx";
 import Image from "next/image";
+import NextHead from "next/head";
 
 import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
@@ -38,6 +39,17 @@ const EditerMarkdown = dynamic(
 export default function IndexPage({ data }: { data: INews }) {
   return (
     <DefaultLayout>
+      <NextHead>
+        <title>{`${data.title} | Looneyesstudio`}</title>
+        <meta
+          key="title"
+          content={`${data.title} | Looneyesstudio`}
+          property="og:title"
+        />
+        <meta content={data.subTitle} property="og:description" />
+        <meta content={data.subTitle} name="description" />
+      </NextHead>
+
       <div className="bg-black">
         {/**
          * SECTION 1

@@ -37,7 +37,7 @@ export const Navbar = () => {
                   <Image
                     className="h-full w-full"
                     alt="app-logo"
-                    src={"/images/vinama-logo.png"}
+                    src={"/images/logo.png"}
                     width={180}
                     height={73.19}
                   />

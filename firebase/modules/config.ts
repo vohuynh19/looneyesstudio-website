@@ -15,12 +15,14 @@ export const createConfig = async ({
   facebook,
   youtube,
   tiktok,
+  address,
 }: {
   email: string;
   phone: string;
   facebook: string;
   youtube: string;
   tiktok: string;
+  address: string;
 }) => {
   const collectionRef = collection(db, "config");
   return addDoc(collectionRef, {
@@ -30,6 +32,7 @@ export const createConfig = async ({
     facebook,
     youtube,
     tiktok,
+    address,
     updatedAt: moment().toString(),
     createdAt: moment().toString(),
   });
@@ -54,12 +57,14 @@ export const updateConfig = async ({
   facebook,
   youtube,
   tiktok,
+  address,
 }: {
   email: string;
   phone: string;
   facebook: string;
   youtube: string;
   tiktok: string;
+  address: string;
 }) => {
   const dataQuery = query(collection(db, "config"));
   (await getDocs(dataQuery)).docs.map(async (doc) => {
@@ -73,6 +78,7 @@ export const updateConfig = async ({
         facebook,
         youtube,
         tiktok,
+        address,
         updatedAt: moment().toString(),
         createdAt: moment().toString(),
       });

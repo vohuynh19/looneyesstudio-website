@@ -8,21 +8,12 @@ import "@/styles/globals.css";
 
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import { useEffect, useState } from "react";
 import { AuthUserProvider } from "@/firebase/context";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/config/client";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-  if (!isClient) {
-    return null;
-  }
 
   return (
     <QueryClientProvider client={queryClient}>

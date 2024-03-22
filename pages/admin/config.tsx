@@ -17,25 +17,6 @@ export const MarkdownEditor = dynamic(() => import("@uiw/react-md-editor"), {
   ssr: false,
 });
 
-const columns = [
-  {
-    key: "createdAt",
-    label: "Thời gian",
-  },
-  {
-    key: "email",
-    label: "Email",
-  },
-  {
-    key: "name",
-    label: "Tên",
-  },
-  {
-    key: "content",
-    label: "Nội dung",
-  },
-];
-
 export default function IndexPage() {
   useAuthRoute();
   const phoneRef = useRef<HTMLInputElement>(null);
@@ -43,6 +24,7 @@ export default function IndexPage() {
   const facebookRef = useRef<HTMLInputElement>(null);
   const tiktokRef = useRef<HTMLInputElement>(null);
   const youtubeRef = useRef<HTMLInputElement>(null);
+  const addressRef = useRef<HTMLInputElement>(null);
 
   const { data, isFetching } = useQuery({
     queryKey: ["config"],
@@ -61,13 +43,15 @@ export default function IndexPage() {
       emailRef.current &&
       facebookRef.current &&
       tiktokRef.current &&
-      youtubeRef.current
+      youtubeRef.current &&
+      addressRef.current
     ) {
       phoneRef.current.value = data.phone;
       emailRef.current.value = data.email;
       facebookRef.current.value = data.facebook;
       tiktokRef.current.value = data.tiktok;
       youtubeRef.current.value = data.youtube;
+      addressRef.current.value = data.address;
     }
   }, [data]);
 
@@ -79,6 +63,7 @@ export default function IndexPage() {
         facebook: facebookRef.current?.value || "",
         tiktok: tiktokRef.current?.value || "",
         youtube: youtubeRef.current?.value || "",
+        address: addressRef.current?.value || "",
       });
       toast.success("Cập nhật cấu hình thành công");
     } catch (error) {
@@ -191,6 +176,25 @@ export default function IndexPage() {
                 placeholder="Enter Youtube link"
                 className="mb-8"
                 ref={youtubeRef}
+              />
+            </div>
+
+            <div>
+              <div
+                className={clsx(
+                  title({
+                    color: "white",
+                    size: "sm",
+                  }),
+                  "w-full mb-2 text-start",
+                )}
+              >
+                Địa chỉ
+              </div>
+              <Input
+                placeholder="Enter Youtube link"
+                className="mb-8"
+                ref={addressRef}
               />
             </div>
           </div>

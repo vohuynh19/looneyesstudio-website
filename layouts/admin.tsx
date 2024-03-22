@@ -5,9 +5,19 @@ import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { Head } from "./head";
 import { siteConfig } from "@/config/site";
+import { useEffect, useState } from "react";
 
 export const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   const route = useRouter();
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <div className="min-h-screen w-full bg-black">

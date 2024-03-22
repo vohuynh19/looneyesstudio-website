@@ -4,12 +4,18 @@ import { textConfig } from "@/config/text";
 import Image from "next/image";
 import { NavigateButton } from "./button";
 import { Button, Input, Pagination } from "@nextui-org/react";
-import { ArrowIcon, FacebookLogo, TiktokIcon, YoutubeIcon } from "./icons";
+import {
+  AddressIcon,
+  ArrowIcon,
+  FacebookLogo,
+  TiktokIcon,
+  YoutubeIcon,
+} from "./icons";
 import Link from "next/link";
 import { NewsInListItem, NewsItem, mockNewsData } from "./news";
 import { fontSaira } from "@/config/fonts";
 import { useMediaQuery } from "react-responsive";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { getPageNews } from "@/firebase/modules/news";
 import { FC, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
@@ -276,6 +282,11 @@ export const SubcribeSection = () => {
     }
   };
 
+  const { mutateAsync, isPending } = useMutation({
+    mutationKey: ["registerUser"],
+    mutationFn: () => submitForm(),
+  });
+
   return (
     <section className="flex lg:h-screen bg-sky_1 bg-contain px-4 py-12 md:py-4">
       <div className="w-full flex items-center justify-center">
@@ -325,6 +336,7 @@ export const SubcribeSection = () => {
               className="flex-1 text-[#FFFFFF] bg-transparent text-28px lg:text-[32px] border-none focus:outline-none h-12 lg:h-16 z-10 pr-4"
             />
             <Button
+              isLoading={isPending}
               size="lg"
               color="primary"
               className={clsx(
@@ -335,7 +347,7 @@ export const SubcribeSection = () => {
                 "font-black rounded-lg uppercase px-8 py-0 h-12 lg:h-16",
               )}
               endContent={<ArrowIcon width={44} height={44} />}
-              onClick={() => submitForm()}
+              onClick={() => mutateAsync()}
             >
               {textConfig.common.subcribe}
             </Button>
@@ -371,6 +383,18 @@ export const SubcribeSection = () => {
           </div>
 
           <div className="h-[24px]" />
+
+          <div
+            className={clsx(
+              subtitle({
+                size: "md1",
+              }),
+              "flex items-center justify-center font-medium mb-4 text-center text-neutral-300",
+            )}
+          >
+            <AddressIcon height={24} width={24} fill="white" className="mr-4" />{" "}
+            {data?.address}
+          </div>
 
           <div
             className={clsx(
@@ -455,6 +479,11 @@ export const NewsSection = () => {
 };
 
 export const ContactFormSection = () => {
+  const { data } = useQuery({
+    queryKey: ["config"],
+    queryFn: getConfig,
+  });
+
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const contentRef = useRef<HTMLInputElement>(null);
@@ -487,6 +516,11 @@ export const ContactFormSection = () => {
       toast.error("Đăng ký thất bại, vui lòng điền đủ thông tin.");
     }
   };
+
+  const { mutateAsync, isPending } = useMutation({
+    mutationKey: ["registerUser", "contact"],
+    mutationFn: () => submitForm(),
+  });
 
   return (
     <section className="flex lg:h-screen bg-sky_1 bg-contain relative px-4">
@@ -547,9 +581,21 @@ export const ContactFormSection = () => {
             />
           </div>
 
-          <NavigateButton onClick={() => submitForm()}>
+          <NavigateButton isLoading={isPending} onClick={() => mutateAsync()}>
             {textConfig.contact.section2.sent}
           </NavigateButton>
+
+          <div
+            className={clsx(
+              subtitle({
+                size: "md1",
+              }),
+              "flex items-center justify-center font-medium my-6 text-center text-neutral-300",
+            )}
+          >
+            <AddressIcon height={32} width={32} fill="white" className="mr-4" />{" "}
+            {data?.address}
+          </div>
         </div>
       </div>
     </section>
@@ -582,6 +628,8 @@ export const ListNewsSection: FC<{
     return idx >= LIST_LENGTH * (page - 1) && idx < LIST_LENGTH * page;
   });
 
+  const [isClient, setIsClient] = useState(false);
+
   useEffect(() => {
     if (!searchNews?.length || searchNews.length === 0) {
       return;
@@ -591,6 +639,13 @@ export const ListNewsSection: FC<{
       setPage(Math.ceil(searchNews.length / LIST_LENGTH));
     }
   }, [page, searchNews?.length]);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <section className="flex flex-col items-center justify-center bg-sky_1 bg-cover relative py-4 px-4">

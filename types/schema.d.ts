@@ -42,4 +42,5 @@ interface IConfig {
   facebook: string;
   youtube: string;
   tiktok: string;
+  address: string;
 }

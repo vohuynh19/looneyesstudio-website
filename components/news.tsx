@@ -66,7 +66,6 @@ export const mockNewsData: INews[] = [
     title: "Quảng bá ra mắt phim GodzillaxKong Đế Chế Mới tối 30 Tết",
     subTitle:
       "Lorem ipsum dolor sit amet consectetur. Donec rhoncus vitae aliquet tortor faucibus in. Non at sodales enim ac vitae ut. In nulla sed facilisis auctor.. Lorem ipsum dolor sit amet consectetur. Donec rhoncus vitae aliquet tortor faucibus in. Non at sodales enim ac vitae ut. In nulla sed facilisis auctor..Lorem ipsum dolor sit amet consectetur. Donec rhoncus vitae aliquet tortor faucibus in. Non at sodales enim ac vitae ut. In nulla sed facilisis auctor..Lorem ipsum dolor sit amet consectetur. Donec rhoncus vitae aliquet tortor faucibus in. Non at sodales enim ac vitae ut. In nulla sed facilisis auctor..Lorem ipsum dolor sit amet consectetur. Donec rhoncus vitae aliquet tortor faucibus in. Non at sodales enim ac vitae ut. In nulla sed facilisis auctor...",
-    // imageUri: "/images/vinama-logo.png",
     imageUri:
       "https://media.cnn.com/api/v1/images/stellar/prod/meta-quest-3-accessories-lead-cnnu.jpg?c=original",
     categories: [
