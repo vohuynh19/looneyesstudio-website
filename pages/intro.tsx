@@ -32,7 +32,7 @@ export default function IndexPage() {
          */}
         <section className="flex lg:h-screen bg-sky_1 bg-contain relative px-4">
           <div className={fullScreen()}>
-            <div className="sm:w-full md:w-3/5">
+            <div className="sm:w-full md:w-3/5 opacity-50">
               <Image
                 className="h-full w-full object-cover"
                 alt="intro-cover-1"
@@ -72,7 +72,7 @@ export default function IndexPage() {
 
         <section className="flex h-[600px] lg:h-screen bg-sky_1 bg-contain relative px-4">
           <div className={clsx(fullScreen(), "overflow-hidden")}>
-            <div className="absolute h-1/2 right-[-64px]">
+            <div className="absolute h-1/2 right-[-64px] animate-flicker">
               <Image
                 className="h-full w-full object-cover"
                 alt="home-cover-1"
@@ -114,7 +114,7 @@ export default function IndexPage() {
           <div className={fullScreen()}>
             <div className="sm:w-full md:w-3/5 absolute left-0">
               <Image
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover opacity-50"
                 alt="intro-cover-1"
                 src={"/images/earth.png"}
                 width={1162}

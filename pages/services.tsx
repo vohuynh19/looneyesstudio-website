@@ -33,7 +33,7 @@ export default function IndexPage() {
          */}
         <section className="flex lg:h-screen bg-sky_1 bg-contain relative px-4">
           <div className={fullScreen()}>
-            <div className="sm:w-full md:w-3/5">
+            <div className="sm:w-full md:w-3/5 opacity-50">
               <Image
                 className="h-full w-full object-cover"
                 alt="intro-cover-1"

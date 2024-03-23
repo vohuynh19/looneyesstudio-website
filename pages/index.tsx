@@ -25,7 +25,7 @@ export default function IndexPage() {
          */}
         <section className="flex lg:h-screen bg-sky_1 bg-contain relative">
           <div className={fullScreen()}>
-            <div className="sm:w-full md:w-3/5">
+            <div className="sm:w-full md:w-3/5 animate-flicker">
               <Image
                 className="h-full w-full object-cover"
                 alt="home-cover-1"
@@ -60,11 +60,13 @@ export default function IndexPage() {
 
         <section className="px-4 pb-16 lg:h-screen bg-sky_1 bg-contain relative">
           <div
-            className={fullScreen({
-              type: "absolute",
-            })}
+            className={clsx(
+              fullScreen({
+                type: "absolute",
+              }),
+            )}
           >
-            <div className="w-full max-w-[1536px]">
+            <div className="w-full max-w-[1536px] half-animate-flicker">
               <Image
                 className="h-full w-full object-cover"
                 alt="home-cover-2"
@@ -139,7 +141,7 @@ export default function IndexPage() {
 
         <section className="flex h-[600px] lg:h-screen bg-sky_1 bg-contain relative px-4">
           <div className={clsx(fullScreen(), "overflow-hidden")}>
-            <div className="absolute h-1/2 right-[-64px]">
+            <div className="absolute h-1/2 right-[-64px] animate-flicker">
               <Image
                 className="h-full w-full object-cover"
                 alt="home-cover-1"
