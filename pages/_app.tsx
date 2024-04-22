@@ -11,6 +11,7 @@ import { ToastContainer } from "react-toastify";
 import { AuthUserProvider } from "@/firebase/context";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/config/client";
+import { TranslationProvider } from "@/core/translation";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -20,8 +21,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <AuthUserProvider>
         <NextUIProvider navigate={router.push}>
           <NextThemesProvider>
-            <Component {...pageProps} />
-            <ToastContainer />
+            <TranslationProvider value={pageProps.text}>
+              <Component {...pageProps} />
+              <ToastContainer />
+            </TranslationProvider>
           </NextThemesProvider>
         </NextUIProvider>
       </AuthUserProvider>

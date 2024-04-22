@@ -7,6 +7,17 @@ import clsx from "clsx";
 import Head from "next/head";
 import Image from "next/image";
 
+import { getText } from "@/firebase/modules/text";
+
+export async function getStaticProps() {
+  try {
+    const text = await getText("/");
+    return { props: { text } };
+  } catch {
+    return { notFound: true };
+  }
+}
+
 export default function IndexPage() {
   useSnapScroll();
 

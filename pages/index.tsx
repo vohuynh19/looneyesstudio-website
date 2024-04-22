@@ -8,14 +8,25 @@ import {
   SubcribeSection,
   renderTitle,
 } from "@/components/sections";
-import { textConfig } from "@/config/text";
+import { useTranslation } from "@/core/translation";
+import { getText } from "@/firebase/modules/text";
 import DefaultLayout from "@/layouts/default";
 import { useSnapScroll } from "@/layouts/useSnapScroll";
 import clsx from "clsx";
 import Image from "next/image";
 
+export async function getStaticProps() {
+  try {
+    const text = await getText("/");
+    return { props: { text } };
+  } catch {
+    return { notFound: true };
+  }
+}
+
 export default function IndexPage() {
   useSnapScroll();
+  const text = useTranslation();
 
   return (
     <DefaultLayout>
@@ -38,7 +49,7 @@ export default function IndexPage() {
 
           <div className={clsx(fullScreen({ type: "relative" }), "py-48")}>
             <div className="text-center flex flex-col items-center justify-center p-4 md:p-0">
-              {renderTitle(textConfig["/"].section1.title, "white")}
+              {renderTitle(text.section1.title, "white")}
 
               <h3
                 className={subtitle({
@@ -46,7 +57,7 @@ export default function IndexPage() {
                   size: "lg",
                 })}
               >
-                {textConfig["/"].section1.description}
+                {text.section1.description}
               </h3>
 
               <MouseLogo className="mt-8" />
@@ -96,7 +107,7 @@ export default function IndexPage() {
                     "uppercase mb-4 font-medium",
                   )}
                 >
-                  {textConfig["/"].section2.title1}
+                  {text.section2.title1}
                 </h3>
 
                 <h3
@@ -108,7 +119,7 @@ export default function IndexPage() {
                     "uppercase mb-4 font-medium",
                   )}
                 >
-                  {textConfig["/"].section2.title2}
+                  {text.section2.title2}
                 </h3>
 
                 <div className="h-[3px] w-[240px] bg-[#524FFF] my-3" />
@@ -119,7 +130,7 @@ export default function IndexPage() {
                     color: "white",
                   })}
                 >
-                  {textConfig["/"].section2.description1}
+                  {text.section2.description1}
                 </h3>
 
                 <h3
@@ -128,7 +139,7 @@ export default function IndexPage() {
                     color: "white",
                   })}
                 >
-                  {textConfig["/"].section2.description2}
+                  {text.section2.description2}
                 </h3>
               </div>
             </div>
@@ -155,7 +166,7 @@ export default function IndexPage() {
           <div className={fullScreen({ type: "relative" })}>
             <div className="container">
               <div className="w-full break-normal">
-                {renderTitle(textConfig["/"].section3.title)}
+                {renderTitle(text.section3.title)}
               </div>
 
               <div className="w-full lg:w-[800px] break-normal mt-8">
@@ -168,7 +179,7 @@ export default function IndexPage() {
                     "mb-6",
                   )}
                 >
-                  {textConfig["/"].section3.description1}
+                  {text.section3.description1}
                 </p>
                 <p
                   className={subtitle({
@@ -176,7 +187,7 @@ export default function IndexPage() {
                     color: "white",
                   })}
                 >
-                  {textConfig["/"].section3.description2}
+                  {text.section3.description2}
                 </p>
               </div>
             </div>

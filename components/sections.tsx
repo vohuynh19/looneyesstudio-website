@@ -74,6 +74,7 @@ export const renderTitle = (
 
 export const ServiceSection = () => {
   const router = useRouter();
+
   return (
     <section className="flex lg:h-screen bg-sky_1 bg-contain relative px-4">
       <div
